@@ -1,0 +1,93 @@
+intents:
+- affirm
+- restaurant_search
+- greet
+- goodbye
+- stop
+- email_confirmation_intent
+- email_validator
+entities:
+- cuisine
+- location
+- price
+- email_confirmation
+- email
+slots:
+  cuisine:
+    type: text
+  location:
+    type: text
+  price:
+    type: text
+  check_resp:
+    type: bool
+  check_email:
+    type: bool
+  email_confirmation:
+    type: text
+  email:
+    type: text
+responses:
+  utter_ask_price:
+  - buttons:
+    - payload: Lesser than Rs. 300
+      title: Lesser than Rs. 300
+    - payload: Rs. 300 to 700
+      title: Rs. 300 to 700
+    - payload: More than 700
+      title: More than 700
+    text: what is your price range for two people?
+  utter_ask_cuisine:
+  - buttons:
+    - payload: Chinese
+      title: Chinese
+    - payload: Mexican
+      title: Mexican
+    - payload: Italian
+      title: Italian
+    - payload: American
+      title: American  
+    - payload: South Indian
+      title: South Indian
+    - payload: North Indian
+      title: North Indian
+    text: what kind of cuisine would you like?
+  utter_ask_howcanhelp:
+  - text: how can I help you?
+  utter_ask_location:
+  - text: In what location?
+  utter_default:
+  - text: i cannot understand
+  utter_goodbye:
+  - text: goodbye :(
+  - text: Bye-bye
+  utter_greet:
+  - text: hey there! How may i help you
+  - text: Hi, How can I help you!
+  - text: Hey, How is it going. How May I help you Today  
+  utter_nonoperable_location:
+  - text: We do not operate in that area yet. Can you specify some other location?
+  utter_ask_email:
+  - buttons:
+    - payload: YES
+      title: YES
+    - payload: NO
+      title: NO
+    text: Do you want to send the details of the top 10 restaurants on email.    
+  utter_email:
+  - text: Please enter your email address.
+actions:
+- action_search_restaurants
+- action_check_loc
+- action_send_mail
+- action_confirm_email
+- utter_ask_cuisine
+- utter_ask_price
+- utter_ask_howcanhelp
+- utter_ask_location
+- utter_default
+- utter_goodbye
+- utter_greet
+- utter_nonoperable_location
+- utter_ask_email
+- utter_email
